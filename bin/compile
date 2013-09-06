@@ -32,7 +32,12 @@ NEWRELIC_URL="${S3_URL}/${NEWRELIC_FILE}"
 COMPOSER_URL="http://getcomposer.org/composer.phar"
 #
 
+export PATH=$PATH:/bin:/usr/bin:
+
 function indent() {
+    echo "================" 
+    echo $PATH
+    echo "================" 
 	c='s/^/       /'
 	case $(uname) in
 		Darwin) sed -l "$c";;
@@ -49,6 +54,10 @@ function check_md5() {
 }
 
 function download_url() {
+    echo "================" 
+    echo $PATH
+    find / -name curl
+    echo "================" 
 	TARGET_URL="$1"
 	curl -s -S -O -L -m 300 --connect-timeout 60 "$TARGET_URL"
 }
