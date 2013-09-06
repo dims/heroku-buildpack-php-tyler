@@ -33,6 +33,11 @@ COMPOSER_URL="http://getcomposer.org/composer.phar"
 #
 
 function indent() {
+    echo "================" 
+    echo $PATH
+    echo "================" 
+    export PATH=$PATH:/bin:
+    echo "================" 
 	c='s/^/       /'
 	case $(uname) in
 		Darwin) sed -l "$c";;
