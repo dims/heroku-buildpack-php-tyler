@@ -54,12 +54,8 @@ function check_md5() {
 }
 
 function download_url() {
-    echo "================" 
-    echo $PATH
-    find / -name curl
-    echo "================" 
 	TARGET_URL="$1"
-	curl -s -S -O -L -m 300 --connect-timeout 60 "$TARGET_URL"
+	/usr/bin/curl -s -S -O -L -m 300 --connect-timeout 60 "$TARGET_URL"
 }
 
 BIN_DIR=$(dirname $0)
